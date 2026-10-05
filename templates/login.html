@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sadeus System — Accès</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at center, #3b0000 0%, #120000 45%, #050505 100%);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .access-box {
+            width: min(90%, 390px);
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid #6d0000;
+            border-radius: 18px;
+            background: rgba(10, 0, 0, 0.82);
+            box-shadow: 0 0 35px rgba(180, 0, 0, 0.25);
+        }
+
+        .symbol {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            margin: 10px 0 28px;
+            color: #bdbdbd;
+            font-size: 13px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #650000;
+            border-radius: 10px;
+            outline: none;
+            background: #090909;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        input:focus {
+            border-color: #c00000;
+            box-shadow: 0 0 12px rgba(190, 0, 0, 0.35);
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #8b0000;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #b00000;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 11px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="access-box">
+        <div class="symbol">𓆙</div>
+
+        <h1>SADEUS SYSTEM</h1>
+
+        <div class="subtitle">
+            ACCÈS PRIVÉ
+        </div>
+
+        <form action="/login" method="POST">
+            <input
+                type="password"
+                name="password"
+                placeholder="Mot de passe"
+                autocomplete="current-password"
+                required
+            >
+
+            <button type="submit">
+                ACCÉDER
+            </button>
+        </form>
+
+        <div class="footer">
+            Powered by Gojo Sadeus
+        </div>
+    </main>
+
+</body>
+</html>

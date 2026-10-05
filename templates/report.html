@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sadeus — Signalement</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 20% 10%, #500000 0%, transparent 35%),
+                radial-gradient(circle at 80% 30%, #280000 0%, transparent 40%),
+                #050505;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .page {
+            width: min(100%, 600px);
+            min-height: 100vh;
+            margin: auto;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* COULOIR SADEUS */
+
+        .sadeus-link {
+            display: block;
+            width: 100%;
+            text-align: center;
+            color: #d00000;
+            text-decoration: none;
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 15px;
+        }
+
+        .sadeus-link:hover {
+            color: #ff2020;
+        }
+
+        /* HEADER */
+
+        .header {
+            padding: 18px;
+            border: 1px solid #650000;
+            border-radius: 14px;
+            background: rgba(15, 0, 0, 0.8);
+            text-align: center;
+        }
+
+        .header-symbol {
+            font-size: 30px;
+        }
+
+        .header-title {
+            margin-top: 7px;
+            font-size: 19px;
+            letter-spacing: 3px;
+        }
+
+        .header-subtitle {
+            margin-top: 5px;
+            color: #999;
+            font-size: 11px;
+        }
+
+        /* MUSIQUE */
+
+        .music-button {
+            width: 100%;
+            margin-top: 12px;
+            padding: 13px;
+            border: 1px solid #720000;
+            border-radius: 10px;
+            background: #120000;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .music-button.active {
+            background: #720000;
+            border-color: #b00000;
+            box-shadow: 0 0 15px rgba(180, 0, 0, 0.25);
+        }
+
+        /* MESSENGER / BUSINESS */
+
+        .account-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .account-button {
+            padding: 13px;
+            border: 1px solid #650000;
+            border-radius: 10px;
+            background: #110000;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .account-button.active {
+            background: #720000;
+            border-color: #b00000;
+        }
+
+        /* CIBLE */
+
+        .target-box {
+            margin-top: 25px;
+        }
+
+        .target-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: #aaa;
+            letter-spacing: 1px;
+        }
+
+        .target-input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #650000;
+            background: #080808;
+            color: white;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .target-input:focus {
+            border-color: #c00000;
+            box-shadow: 0 0 12px rgba(190, 0, 0, 0.3);
+        }
+
+        /* INJECTION */
+
+        .inject-button {
+            width: 100%;
+            margin-top: 16px;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            background: #8b0000;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .inject-button:hover {
+            background: #b00000;
+        }
+
+        /* TEXTE */
+
+        .description {
+            margin-top: auto;
+            padding: 35px 5px 65px;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            line-height: 1.7;
+            font-weight: bold;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #555;
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- LIEN COULOIR SADEUS -->
+    <a
+        class="sadeus-link"
+        href="https://whatsapp.com/channel/0029Vb7Y9vZBKfhrrUEr8s1Z"
+        target="_blank"
+        rel="noopener noreferrer">
+        Suivre la chaîne 📽️𝑪𝑶𝑼𝑳𝑶𝑰𝑹 𝑺𝑨𝑫𝑬𝑼𝑺ⁱⁿᶠᵒ🌐 sur WhatsApp
+    </a>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-symbol">𓆙</div>
+
+        <div class="header-title">
+            SADEUS SYSTEM
+        </div>
+
+        <div class="header-subtitle">
+            CENTRE DE SIGNALEMENT
+        </div>
+    </header>
+
+    <!-- MUSIQUE -->
+    <button
+        class="music-button"
+        id="musicButton"
+        type="button">
+        Sadeus song 🔇
+    </button>
+
+    <audio id="sadeusAudio" preload="auto" loop>
+        <source src="/static/audio/sadeus-song.m4a" type="audio/mp4">
+    </audio>
+
+    <!-- MESSENGER / BUSINESS -->
+    <div class="account-buttons">
+
+        <button
+            class="account-button active"
+            type="button">
+            MESSENGER
+        </button>
+
+        <button
+            class="account-button"
+            type="button">
+            BUSINESS
+        </button>
+
+    </div>
+
+    <!-- CIBLE -->
+    <div class="target-box">
+
+        <label class="target-label" for="target">
+            NUMÉRO / CIBLE
+        </label>
+
+        <input
+            class="target-input"
+            id="target"
+            type="text"
+            placeholder="Entrez le numéro ou la cible"
+            autocomplete="off"
+        >
+
+        <button
+            class="inject-button"
+            type="button">
+            ☠ INJECTION DU VENIN
+        </button>
+
+    </div>
+
+    <!-- TEXTE SADEUS -->
+    <div class="description">
+        𓆙 𝗦𝗔𝗗𝗘𝗨𝗦 : 𝗡𝗢𝗨𝗦 𝗠𝗘𝗧𝗧𝗢𝗡𝗦 𝗘𝗡 𝗣𝗟𝗔𝗖𝗘 𝗟𝗘𝗦 𝗟𝗢𝗜𝗦 𝗤𝗨𝗜 𝗥É𝗚𝗜𝗦𝗦𝗘𝗡𝗧 𝗖𝗘 𝗠𝗢𝗡𝗗𝗘. 👑
+    </div>
+
+</div>
+
+<footer>
+    Powered by Gojo Sadeus
+</footer>
+
+<script>
+    const musicButton = document.getElementById("musicButton");
+    const audio = document.getElementById("sadeusAudio");
+
+    let musicOn = false;
+
+    audio.volume = 0.7;
+
+    musicButton.addEventListener("click", async () => {
+        if (!musicOn) {
+            try {
+                await audio.play();
+
+                musicOn = true;
+                musicButton.textContent = "Sadeus song 🔊";
+                musicButton.classList.add("active");
+
+            } catch (error) {
+                console.log("Lecture audio impossible :", error);
+            }
+
+        } else {
+            audio.pause();
+            musicOn = false;
+
+            musicButton.textContent = "Sadeus song 🔇";
+            musicButton.classList.remove("active");
+        }
+    });
+</script>
+
+</body>
+</html>
